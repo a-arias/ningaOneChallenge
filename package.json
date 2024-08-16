@@ -1,0 +1,23 @@
+{
+  "name": "ninjaonechallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-arias/ninjaOneChallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-arias/ninjaOneChallenge/issues"
+  },
+  "homepage": "https://github.com/a-arias/ninjaOneChallenge#readme",
+  "dependencies": {
+    "testcafe": "^3.6.2",
+    "axios": "^1.7.4"
+  }
+}
