@@ -1,1 +1,1 @@
-# ningaOneChallenge
+# ninjaOneChallenge
