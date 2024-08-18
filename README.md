@@ -18,19 +18,19 @@ https://github.com/Yastrenky/devices-clientapp
 - Install backend of the application:
 https://github.com/NinjaRMM/devicesTask_serverApp
 
-API Information
-Base URL: 
+## API Information
+- Base URL: 
 http://localhost:3001
 
-Endpoints:
+- Endpoints:
 
-`GET /devices`
+- `GET /devices`
 
-`GET /devices/:id`
+- `GET /devices/:id`
 
-`POST /devices`
+- `POST /devices`
 
-`DELETE /devices/:id`
+- `DELETE /devices/:id`
 
 
 ## Installation
