@@ -18,7 +18,10 @@ test('Rename the first device and verify it', async t => {
     await t.eval(() => location.reload(true));
 
      //Assert that the new device is displayed correctly in the list
+     
      const renamedDevice = Selector('.device-info').withText('Renamed Device1');
+     
      await t
-         .expect(renamedDevice.find('.device-name').innerText).eql('Renamed Device1')
+        .expect(renamedDevice.find('.device-name').visible).ok()
+        .expect(renamedDevice.find('.device-name').innerText).eql('Renamed Device1')
 });

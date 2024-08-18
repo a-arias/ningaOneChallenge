@@ -19,6 +19,12 @@ test('Retrieve list of devices using API call and validate the devices are prese
 
     //Iterate through devices
     for (let i = 0; i < deviceCount; i++) {
+        // Ensure the elements are visible before getting their text content
+        await t
+        .expect(deviceElements.nth(i).find('.device-name').visible).ok()
+        .expect(deviceElements.nth(i).find('.device-type').visible).ok()
+        .expect(deviceElements.nth(i).find('.device-capacity').visible).ok();
+
         const domDeviceName = await deviceElements.nth(i).find('.device-name').innerText;
         const domDeviceType = await deviceElements.nth(i).find('.device-type').innerText;
         const domDeviceCapacity = await deviceElements.nth(i).find('.device-capacity').innerText;
@@ -35,7 +41,7 @@ test('Retrieve list of devices using API call and validate the devices are prese
 
         // Assert that the edit and delete buttons are present
         await t
-            .expect(deviceElements.nth(i).find('.device-edit').exists).ok()
-            .expect(deviceElements.nth(i).find('.device-remove').exists).ok();
+            .expect(deviceElements.nth(i).find('.device-edit').visible).ok()
+            .expect(deviceElements.nth(i).find('.device-remove').visible).ok();
     }
 });

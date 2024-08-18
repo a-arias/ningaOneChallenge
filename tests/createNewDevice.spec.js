@@ -36,7 +36,10 @@ fixture`Device Creation`
         // Assert that the new device is displayed correctly in the list
         const newDeviceElement = Selector('.device-info').withText(deviceInformation.name);
         await t
+            .expect(newDeviceElement.find('.device-name').visible).ok() 
             .expect(newDeviceElement.find('.device-name').innerText).eql(deviceInformation.name)
+            .expect(newDeviceElement.find('.device-type').visible).ok()
             .expect(newDeviceElement.find('.device-type').innerText).eql(deviceInformation.operatingSystemOption.one)
+            .expect(newDeviceElement.find('.device-capacity').visible).ok()
             .expect(newDeviceElement.find('.device-capacity').innerText).eql(`${deviceInformation.hdd_capacity} GB`);
     });
