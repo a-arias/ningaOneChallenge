@@ -36,3 +36,6 @@ yarn.lock
 
 # Optional npm cache directory
 .npm/
+
+# Reports
+reports/
