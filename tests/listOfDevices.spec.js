@@ -11,7 +11,7 @@ let sortedData = null;
 
 test('Retrieve list of devices using API call and validate the devices are present on the web application with correct information', async t => {
     // Make an API call to retrieve the list of devices and save the reponse.
-    const response = await axios.get('http://localhost:3000/devices');
+    const response = await axios.get(config.apiUrl);
     const apiDevices = response.data;
 
     // Iterate through the DOM elements that represent devices

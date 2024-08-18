@@ -7,11 +7,11 @@ fixture`Rename Device`
 
 test('Rename the first device and verify it', async t => {
     // Make API call to get the list of devices
-    const response = await axios.get('http://localhost:3000/devices');
+    const response = await axios.get(config.apiUrl);
     const firstDevice = response.data[0];
 
     // Rename the first device via API
-    await axios.put(`http://localhost:3000/devices/${firstDevice.id}`, {"system_name": "Renamed Device1","type": "MAC","hdd_capacity": "500"});
+    await axios.put(`${config.apiUrl}/${firstDevice.id}`, {"system_name": "Renamed Device1","type": "MAC","hdd_capacity": "500"});
 
     // Reload the page
     await t.eval(() => location.reload(true));

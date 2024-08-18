@@ -7,7 +7,7 @@ fixture`Delete Device`
 
     test('Delete the last device and verify it is removed from the list', async t => {
         // Make API call to get the list of devices
-        const response = await axios.get('http://localhost:3000/devices');
+        const response = await axios.get(config.apiUrl);
         const lastDevice = response.data[response.data.length - 1];
 
         // Get the 
@@ -17,7 +17,7 @@ fixture`Delete Device`
         const initialDeviceCount = await deviceElements.count;
 
         // Delete the last device via API
-        await axios.delete(`http://localhost:3000/devices/${lastDevice.id}`);
+        await axios.delete(`${config.apiUrl}/${lastDevice.id}`);
     
         // Reload the page and verify the device is removed
         await t.eval(() => location.reload(true));
