@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/a-arias/ninjaOneChallenge#readme",
   "dependencies": {
-    "testcafe": "^3.6.2",
-    "axios": "^1.7.4"
+    "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "testcafe": "^3.6.2"
   }
 }
