@@ -4,7 +4,7 @@ import {
 const config = require('../conf/conf.json');
 import axios from 'axios';
 
-fixture`Rename Device`
+fixture`Device renaming`
 .page `${config.baseUrl}/`;
 
 test('Rename the first device and verify it', async t => {
@@ -23,7 +23,6 @@ test('Rename the first device and verify it', async t => {
     await t.eval(() => location.reload(true));
 
     //Assert that the new device is displayed correctly in the list
-
     const renamedDevice = Selector('.device-info').withText('Renamed Device1');
 
     await t

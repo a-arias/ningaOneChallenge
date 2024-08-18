@@ -4,7 +4,7 @@ import {
 const config = require('../conf/conf.json');
 import axios from 'axios';
 
-fixture`Delete Device`
+fixture`Device deletion`
 .page `${config.baseUrl}/`;
 
 test('Delete the last device and verify it is removed from the list', async t => {

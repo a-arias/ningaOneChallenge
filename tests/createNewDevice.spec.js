@@ -2,7 +2,6 @@ import {
     Selector
 } from 'testcafe';
 const config = require('../conf/conf.json');
-import axios from 'axios';
 
 fixture`Device Creation`
 .page `${config.baseUrl}/`;
