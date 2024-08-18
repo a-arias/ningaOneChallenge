@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
+const config = require('../conf/conf.json');
+
 import axios from 'axios';
 
 fixture `Device List`
-    .page `http://localhost:3001/`;
+    .page `${config.baseUrl}/`;
 
 let responseBody = null;
 let sortedData = null;

@@ -1,8 +1,9 @@
 import { Selector } from 'testcafe';
+const config = require('../conf/conf.json');
 import axios from 'axios';
 
 fixture`Device Creation`
-    .page`http://localhost:3001/`;
+    .page `${config.baseUrl}/`;
 
     test('Create a new device and verify it is visible', async t => {
         //creating device information object

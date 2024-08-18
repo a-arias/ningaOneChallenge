@@ -1,15 +1,14 @@
 import { Selector } from 'testcafe';
+const config = require('../conf/conf.json');
 import axios from 'axios';
 
 fixture`Rename Device`
-    .page`http://localhost:3001/`;
+    .page `${config.baseUrl}/`;
 
 test('Rename the first device and verify it', async t => {
     // Make API call to get the list of devices
     const response = await axios.get('http://localhost:3000/devices');
     const firstDevice = response.data[0];
-
-    console.log(firstDevice)
 
     // Rename the first device via API
     await axios.put(`http://localhost:3000/devices/${firstDevice.id}`, {"system_name": "Renamed Device1","type": "MAC","hdd_capacity": "500"});

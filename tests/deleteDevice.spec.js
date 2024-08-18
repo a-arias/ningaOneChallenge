@@ -1,14 +1,14 @@
 import { Selector } from 'testcafe';
+const config = require('../conf/conf.json');
 import axios from 'axios';
 
 fixture`Delete Device`
-    .page`http://localhost:3001/`;
+    .page `${config.baseUrl}/`;
 
     test('Delete the last device and verify it is removed from the list', async t => {
         // Make API call to get the list of devices
         const response = await axios.get('http://localhost:3000/devices');
         const lastDevice = response.data[response.data.length - 1];
-        console.log(lastDevice)
 
         // Get the 
         const deviceElements = Selector('.device-info');
