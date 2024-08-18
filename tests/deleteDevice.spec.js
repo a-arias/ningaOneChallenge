@@ -1,7 +1,8 @@
 import {
     Selector
 } from 'testcafe';
-const config = require('../conf/conf.json');
+const config = require('../config/config');
+
 import axios from 'axios';
 
 fixture`Device deletion`

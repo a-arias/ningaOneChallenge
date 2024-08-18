@@ -1,7 +1,9 @@
 import {
     Selector
 } from 'testcafe';
-const config = require('../conf/conf.json');
+//const config = require('../config/config.json');
+const config = require('../config/config');
+
 
 fixture`Device Creation`
 .page `${config.baseUrl}/`;
