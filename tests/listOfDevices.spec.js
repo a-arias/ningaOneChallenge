@@ -1,4 +1,6 @@
-import { Selector } from 'testcafe';
+import {
+    Selector
+} from 'testcafe';
 const config = require('../conf/conf.json');
 
 import axios from 'axios';
@@ -23,9 +25,9 @@ test('Retrieve list of devices using API call and validate the devices are prese
     for (let i = 0; i < deviceCount; i++) {
         // Ensure the elements are visible before getting their text content
         await t
-        .expect(deviceElements.nth(i).find('.device-name').visible).ok()
-        .expect(deviceElements.nth(i).find('.device-type').visible).ok()
-        .expect(deviceElements.nth(i).find('.device-capacity').visible).ok();
+            .expect(deviceElements.nth(i).find('.device-name').visible).ok()
+            .expect(deviceElements.nth(i).find('.device-type').visible).ok()
+            .expect(deviceElements.nth(i).find('.device-capacity').visible).ok();
 
         const domDeviceName = await deviceElements.nth(i).find('.device-name').innerText;
         const domDeviceType = await deviceElements.nth(i).find('.device-type').innerText;
