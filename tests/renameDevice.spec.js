@@ -6,7 +6,7 @@ const config = require('../config/config');
 import axios from 'axios';
 
 fixture`Device renaming`
-.page `${config.baseUrl}/`;
+    .page `${config.baseUrl}/`;
 
 test('Rename the first device and verify it', async t => {
     // Make API call to get the list of devices
