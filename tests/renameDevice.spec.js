@@ -1,5 +1,4 @@
 import {Selector} from 'testcafe';
-import axios from 'axios';
 
 const config = require('../config/config');
 
@@ -15,14 +14,21 @@ operatingSystems.forEach(os => {
 
     test(`Rename the first device to ${os} and verify it`, async t => {
         // Make API call to get the list of devices
-        const response = await axios.get(config.apiUrl);
-        const firstDevice = response.data[0];
+        const response = await t.request({
+            url: config.apiUrl,
+            method: 'GET'
+        });
+        const firstDevice = response.body[0];
 
-        // Rename the first device via API
-        await axios.put(`${config.apiUrl}/${firstDevice.id}`, {
-            "system_name": `Renamed Device ${os}`,
-            "type": os,
-            "hdd_capacity": "500"
+        // Rename the first device of the API with request
+        await t.request({
+            url: `${config.apiUrl}/${firstDevice.id}`,
+            method: 'PUT',
+            body: {
+                system_name: `Renamed Device ${os}`,
+                type: os,
+                hdd_capacity: "500"
+            },
         });
 
         // Reload the page

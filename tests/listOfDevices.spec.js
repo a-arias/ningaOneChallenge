@@ -1,20 +1,17 @@
-import {
-    Selector
-} from 'testcafe';
+import {Selector} from 'testcafe';
+
 const config = require('../config/config');
 
-import axios from 'axios';
-
-fixture `Device List`
-    .page `${config.baseUrl}/`;
-
-let responseBody = null;
-let sortedData = null;
+fixture`Device List`
+    .page`${config.baseUrl}/`;
 
 test('Retrieve list of devices using API call and validate the devices are present on the web application with correct information', async t => {
     // Make an API call to retrieve the list of devices and save the reponse.
-    const response = await axios.get(config.apiUrl);
-    const apiDevices = response.data;
+    const response = await t.request({
+        url: config.apiUrl,
+        method: 'GET'
+    });
+    const apiDevices = response.body;
 
     // Iterate through the DOM elements that represent devices
     const deviceElements = Selector('.list-devices').child('.device-item');
